@@ -31,7 +31,7 @@ let tasks = [
     name: "Continue project 2",
     description: "Create a webapp",
     priority: "Low",
-    finished: false,
+    finished: true,
   },
   {
     id: 5,
@@ -79,8 +79,9 @@ for (let i = 0; i < tasks.length; i++) {
       li.classList = "task-finished";
       finished_btn.style.display = "none";
       priority.style.display = "none";
-      tasks.finished = true;
+      tasks[i].finished = true;
       delete_btn.style.display = "none";
+      counter();
     });
   }
 
@@ -89,12 +90,18 @@ for (let i = 0; i < tasks.length; i++) {
     delete_btn.innerText = "♻︎ Delete Task";
     delete_btn.classList = "delete-btn";
     li.appendChild(delete_btn);
+
     delete_btn.addEventListener("click", () => {
+      tasks = tasks.filter((task) => task.id !== tasks[i].id);
       li.style.display = "none";
+      counter();
     });
   }
 
+  // Filter schau alle tasks von der Array und behaltet nur die tasks die die Bedienung treffen ("ist es nicht gleich als tasks[i].id? Dann behalte ich")
+
   tasks_list.appendChild(li);
+  counter();
 
   if (tasks[i].finished) {
     li.classList = "task-finished";
@@ -157,8 +164,9 @@ create_task_btn.addEventListener("click", () => {
     li.classList = "task-finished";
     finished_btn.style.display = "none";
     priority.style.display = "none";
-    tasks.finished = true;
+    newTask.finished = true;
     delete_btn.style.display = "none";
+    counter();
   });
 
   let delete_btn = document.createElement("button");
@@ -167,30 +175,32 @@ create_task_btn.addEventListener("click", () => {
   li.appendChild(delete_btn);
 
   delete_btn.addEventListener("click", () => {
+    tasks = tasks.filter((task) => task.id !== newTask.id);
     li.style.display = "none";
-    total_counter -= 1;
-    todo_counter -= 1;
-    finished_counter -= 1;
+    counter();
   });
 
   tasks_list.appendChild(li);
   tasks.push(newTask);
+  counter();
 });
 
 // Tasks Counter
 
-let total_counter = tasks.length;
-let todo_counter = 0;
-let finished_counter = 0;
+function counter() {
+  let total_counter = tasks.length;
+  let todo_counter = 0;
+  let finished_counter = 0;
 
-for (let i = 0; i < tasks.length; i++) {
-  if (tasks[i].finished === false) {
-    todo_counter++;
-  } else {
-    finished_counter++;
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].finished === false) {
+      todo_counter++;
+    } else {
+      finished_counter++;
+    }
   }
-}
 
-total_tasks.innerText = total_counter;
-total_todo_tasks.innerText = todo_counter;
-total_finished_tasks.innerText = finished_counter;
+  total_tasks.innerText = total_counter;
+  total_todo_tasks.innerText = todo_counter;
+  total_finished_tasks.innerText = finished_counter;
+}
