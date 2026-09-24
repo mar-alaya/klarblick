@@ -1,0 +1,82 @@
+/* === JS Klassen === */
+
+/* Badges */
+
+.badge-high {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-left: 15rem;
+  display: inline;
+  border-radius: 15%;
+}
+
+.badge-middle {
+  background-color: rgb(202, 202, 36);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-left: 15rem;
+  display: inline;
+  border-radius: 15%;
+}
+
+.badge-low {
+  background-color: rgb(19, 182, 19);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-left: 15rem;
+  display: inline;
+  border-radius: 15%;
+}
+
+/* Tasks */
+
+.task-finished {
+  background-color: rgba(190, 190, 190, 0.555);
+  padding: 1rem;
+  margin: 0.5rem 2rem 0.5rem 2rem;
+  text-transform: capitalize;
+  box-shadow: inset 0px 5px rgba(161, 161, 161, 0.555);
+  border: 0.1rem solid rgba(37, 37, 37, 0.473);
+}
+
+.task-card {
+  background-color: white;
+  padding: 1rem;
+  margin: 0.5rem 2rem 0.5rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 5px 3px 3px rgb(202, 202, 202);
+  border: 0.1rem solid rgba(37, 37, 37, 0.473);
+}
+
+.finished-btn {
+  background-color: white;
+  border: 0.1rem solid oklch(65% 0.241 354.308);
+  color: oklch(65% 0.241 354.308);
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  border-radius: 15%;
+  &:hover {
+    background-color: oklch(65% 0.241 354.308);
+    color: white;
+  }
+}
+
+.delete-btn {
+  background-color: white;
+  border: 0.1rem solid grey;
+  color: grey;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  border-radius: 15%;
+  &:hover {
+    background-color: grey;
+    color: white;
+  }
+}
