@@ -14,7 +14,7 @@
     <title>Klarblick</title>
   </head>
   <body>
-    <header class="bg-black p-4">
+    <header class="bg-black p-4 w-full">
       <nav>
         <div class="navbar bg-base-100 shadow-sm rounded-2xl p-4">
           <div class="flex-1">
@@ -63,7 +63,9 @@
     </header>
     <main class="bg-pink-200 p-4 flex flex-col gap-10">
       <section class="section-overview flex justify-center items-center">
-        <div class="stats shadow bg-white mx-4 min-w-200">
+        <div
+          class="stats stats-vertical md:stats-horizontal shadow bg-white mx-4"
+        >
           <div class="stat">
             <div class="stat-figure text-secondary">
               <svg
@@ -138,7 +140,7 @@
 
           <aside
             id="form-new-task"
-            class="bg-white rounded-2xl p-4 min-w-150 ml-5 text-center flex flex-col gap-5"
+            class="bg-white rounded-2xl p-4 w-full md:min-w-100 md:w-auto md:ml-5 text-center flex flex-col gap-5 sm: mt-4"
           >
             <h2 class="text-secondary font-bold text-xl">Create a new task</h2>
             <fieldset class="fieldset">
@@ -176,7 +178,7 @@
       </section>
     </main>
     <footer
-      class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4"
+      class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center place-items-center text-center p-4"
     >
       <aside class="grid-flow-col items-center p-4">
         <p>Copyright © 2026 - All right reserved</p>
