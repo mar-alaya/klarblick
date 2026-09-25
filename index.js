@@ -138,10 +138,12 @@ create_task_btn.addEventListener("click", () => {
 
   let title = document.createElement("div");
   title.innerText = input_name;
+  title.className = "task-title";
   li.appendChild(title);
 
   let description = document.createElement("div");
   description.innerText = input_description;
+  description.className = "task-subtitle";
   li.appendChild(description);
 
   let priority = document.createElement("div");
