@@ -62,10 +62,8 @@
       </section>
     </header>
     <main class="bg-pink-200 p-4 flex flex-col gap-10">
-      <section class="section-overview">
-        <div
-          class="stats shadow flex justify-around items-center gap-5 bg-white mx-4"
-        >
+      <section class="section-overview flex justify-center items-center">
+        <div class="stats shadow bg-white mx-4 min-w-200">
           <div class="stat">
             <div class="stat-figure text-secondary">
               <svg
@@ -82,7 +80,7 @@
                 ></path>
               </svg>
             </div>
-            <div class="stat-title">Total Tasks</div>
+            <div class="stat-title text-lg">Total Tasks</div>
             <div class="stat-value" id="total-tasks"></div>
           </div>
 
@@ -90,8 +88,8 @@
             <div class="stat-figure text-secondary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="32px"
+                height="32px"
                 viewBox="0 0 16 16"
               >
                 <path d="M0 0h16v16H0z" fill="none" />
@@ -101,7 +99,7 @@
                 />
               </svg>
             </div>
-            <div class="stat-title">To Do</div>
+            <div class="stat-title text-lg">To Do</div>
             <div class="stat-value" id="total-todo"></div>
           </div>
 
@@ -109,8 +107,8 @@
             <div class="stat-figure text-secondary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="32px"
+                height="32px"
                 viewBox="0 0 24 24"
               >
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -124,7 +122,7 @@
                 />
               </svg>
             </div>
-            <div class="stat-title">Finished</div>
+            <div class="stat-title text-lg">Finished</div>
             <div class="stat-value" id="total-finished"></div>
           </div>
         </div>
@@ -138,28 +136,33 @@
             <ol class="list bg-base-100 rounded-box shadow-md"></ol>
           </article>
 
-          <aside id="form-new-task" class="bg-white rounded-2xl p-4">
-            <h2>Create a new task</h2>
+          <aside
+            id="form-new-task"
+            class="bg-white rounded-2xl p-4 min-w-150 ml-5 text-center flex flex-col gap-5"
+          >
+            <h2 class="text-secondary font-bold text-xl">Create a new task</h2>
             <fieldset class="fieldset">
-              <label class="label" for="name">Name</label>
+              <label class="fieldset-legend" for="name">Name</label>
               <input
                 type="text"
                 id="form-name"
-                class="input"
+                class="input w-full"
                 placeholder="Name of task"
               />
             </fieldset>
             <fieldset class="fieldset">
               <legend class="fieldset-legend">Description</legend>
               <textarea
-                class="textarea h-24"
+                class="textarea h-24 w-full"
                 placeholder="Short description of the task"
                 id="form-description"
               ></textarea>
             </fieldset>
-            <fieldset class="fieldset">
-              <label for="priority">Priorität</label>
-              <select id="form-priority" class="input">
+            <fieldset class="fieldset text-left">
+              <label for="form-priority" class="fieldset-legend"
+                >Priorität</label
+              >
+              <select id="form-priority" class="input w-full">
                 <option value="high">High</option>
                 <option value="medium" selected>Medium</option>
                 <option value="low">Low</option>

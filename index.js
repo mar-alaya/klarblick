@@ -49,10 +49,12 @@ for (let i = 0; i < tasks.length; i++) {
 
   let title = document.createElement("div");
   title.innerText = tasks[i].name;
+  title.className = "task-title";
   li.appendChild(title);
 
   let description = document.createElement("div");
   description.innerText = tasks[i].description;
+  description.className = "task-subtitle";
   li.appendChild(description);
 
   let priority = document.createElement("div");
