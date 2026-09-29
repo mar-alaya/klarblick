@@ -132,9 +132,28 @@
       <section>
         <div class="main-area flex justify-between mx-4 flex-wrap">
           <article id="open-tasks" class="flex-1">
-            <p class="text-secondary font-bold bg-white inline p-4 rounded-2xl">
-              Your Tasks
-            </p>
+            <div class="flex gap-5 items-center">
+              <p
+                class="text-secondary font-bold bg-white inline p-4 rounded-2xl"
+              >
+                Your Tasks
+              </p>
+              <div
+                class="flex items-center gap-2 text-secondary font-bold bg-white p-4 rounded-2xl"
+              >
+                <label
+                  for="priority-filter"
+                  class="text-sm font-semibold text-secondary"
+                  >Filter:</label
+                >
+                <select id="priority-filter" class="select select-sm w-40">
+                  <option value="all">All Priorities</option>
+                  <option value="High">High</option>
+                  <option value="Middle">Middle</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+            </div>
             <ol class="list bg-base-100 rounded-box shadow-md"></ol>
           </article>
 

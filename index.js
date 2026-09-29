@@ -208,3 +208,22 @@ function counter() {
   total_todo_tasks.innerText = todo_counter;
   total_finished_tasks.innerText = finished_counter;
 }
+
+// Priority Filter Flow
+
+const priority_filter = document.querySelector("#priority-filter");
+
+priority_filter.addEventListener("click", () => {
+  const selected = priority_filter.value;
+  const all_li = tasks_list.querySelectorAll("li");
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (selected === "all") {
+      all_li[i].style.display = "";
+    } else if (tasks[i].priority === selected) {
+      all_li[i].style.display = "";
+    } else {
+      all_li[i].style.display = "none";
+    }
+  }
+});
